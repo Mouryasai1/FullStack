@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Photo-Album</title>
+</head>
+<body>
+    <div class="header">
+        <div><h1><strong>Photo-Album</strong></h1></div>
+        <div><i class="fa-solid fa-filter" id="filter"></i></div>
+        <div id="filtermenu">
+            <input type="checkbox" id="greyscale" class="option"> greyscale <br>
+            <input type="checkbox" id="Reddish" class="option"> Reddish <br>
+            <input type="checkbox" id="Greenish" class="option"> Greenish <br>
+            <input type="checkbox" id="Bluish"class="option"> Bluish
+        </div>
+        
+    </div>
+
+
+    <div id="contextMenu">
+        <div id="it3" class="item">Increase Brightness</div>
+        <div id="it4" class="item">Reduce resolution</div><hr>
+        <div id="it5" class="item">Create avatar</div>
+        <div id="it6" class="item">Duplicate image</div> 
+        
+        <div id="it8" class="item">Generate QRCode</div><hr>
+        <div id="it2" class="item">Convert to Greyscale</div>
+        <div id="it9" class="item">Convert to Reddish</div>
+        <div id="it10" class="item">Convert to Greenish</div>
+        <div id="it11" class="item">Convert to Bluish</div><hr>
+        <div id="it12" class="item">Check image color</div>        
+        <div id="it13" class="item">Download image</div>        
+
+    </div>
+    <form class="inputCaption" style="visibility: hidden;">
+        <input type="text" for="caption" id="input">
+        <button type="submit" id="submitCaption"></button>
+    </form>
+    <div id="container" class="container">
+        <div id="1d"><img src="https://images.unsplash.com/photo-1566008885218-90abf9200ddb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fG11c3RhbmclMjBndHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" crossorigin="anonymous" alt="" id="1"></div>
+        <div id="2d"><img src="https://images.unsplash.com/photo-1626327404115-4c9505c560e2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8bXVzdGFuZyUyMGd0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" crossorigin="anonymous" alt="" id="2"></div>
+        <div id="3d"><img src="https://images.unsplash.com/photo-1675319715803-a5ccd02dcead?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDExNHxGem8zenVPSE42d3x8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60" crossorigin="anonymous" alt="" id="3"></div>
+        <div id="4d"><img src="https://images.unsplash.com/photo-1524838588124-14121f04f35a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fG11c3RhbmclMjBndHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" crossorigin="anonymous" alt="" id="4"></div>
+        <div id="5d"><img src="https://images.unsplash.com/photo-1610805177214-885738d255f1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8d2F0ZXJmYWxsc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" crossorigin="anonymous" alt="" id="5"></div>
+        <div id="6d"><img src="https://media.istockphoto.com/id/1454418749/photo/cycling-fast-through-brooklyn-nyc.jpg?b=1&s=170667a&w=0&k=20&c=n4FQq-Il0lYUWsWWkZDkyeLzbF5YRDK7Ip8YQJ7BsCk=" crossorigin="anonymous" alt="" id="6"></div>
+        <div id="7d"><img src="https://images.unsplash.com/photo-1675877103442-d1363a938d04?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDg0fEZ6bzN6dU9ITjZ3fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" crossorigin="anonymous" alt="" id="7"></div>
+        <div id="8d"><img src="https://media.istockphoto.com/id/1239366926/photo/hold-it-steady.jpg?b=1&s=170667a&w=0&k=20&c=61uZ2yMrRLTlfPl8twqJ_sCqNKD5szCE4xUISp_xewY=" alt="" id="8"></div>
+        <div id="9d"><img src="https://images.indianexpress.com/2022/02/new-northern-commander1-1.jpeg" alt="" id="9"></div>
+        <div id="10d"><img src="https://imgd.aeplcdn.com/1280x720/n/cw/ec/55691/right-side-view1.jpeg" alt="" id="10"></div>
+        <div id="11d"><img src="https://images2.minutemediacdn.com/image/fetch/w_736,h_485,c_fill,g_auto,f_auto/https%3A%2F%2Fbeyondtheflag.com%2Fwp-content%2Fuploads%2Fgetty-images%2F2021%2F01%2F1208806062-850x560.jpeg" alt="" id="11"></div>
+        <div id="12d"><img src="https://preview.redd.it/are-f1-cars-allowed-mercedes-amg-f1-w11-eq-performance-one-v0-yiwaddm8d7g81.jpg?auto=webp&s=c28e083beb09714125ecf39cae70c51dd0d1a5b9" alt="" id="12"></div>
+        <div id="13d"><img src="https://images.unsplash.com/photo-1677822188273-5e47af1f18af?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8OXx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60" alt="" id="13"></div>
+        <div id="14d"><img src="https://hips.hearstapps.com/digitalspyuk.cdnds.net/17/19/1494599203-greatest-superhero-films-iron-man.jpg?crop=1.00xw:1.00xh;0,0&resize=640:*" alt="" id="14"></div>
+        <div id="15d"><img src="https://static01.nyt.com/images/2022/04/05/arts/rrr4/merlin_205052391_46430411-aa97-45b4-b0a3-72ef8b593d40-videoSixteenByNine3000.jpg" alt="" id="15"></div>
+        <div id="16d"><img src="https://images.indianexpress.com/2023/01/rrr-3.jpg" crossorigin="anonymous" alt="" id="16"></div>
+    </div> 
+    
+    <canvas  id="3"id="qrcode"></canvas>
+    <footer>
+            <script src="script.js"></script>
+            <script src="https://kit.fontawesome.com/2c968d0755.js" crossorigin="anonymous"></script>
+            <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+            <script type="text/javascript" src="https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
+    </footer>
+</body>
+</html>

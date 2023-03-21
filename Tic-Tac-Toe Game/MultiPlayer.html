@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Tic Tac Toe</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: aqua;
+		}
+
+		.containerBox {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-top: 100px;
+			font-size: 40px;
+		}
+
+		.board {
+			display: flex;
+			flex-direction: row;
+			margin-bottom: 10px;
+		}
+
+		.square {
+			width: 140px;
+			height: 140px;
+			background-color: yellow;
+			border: 1px solid black;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 50px;
+			font-weight: bold;
+			cursor: pointer;
+			margin-right: 10px;
+		}
+
+		.square:hover {
+			background-color: #efefef;
+		}
+
+		.square.clicked {
+			cursor: not-allowed;
+			background-color: #eee;
+		}
+
+		.player-turn {
+			margin-bottom: 10px;
+		}
+
+		.message {
+			font-size: 24px;
+			font-weight: bold;
+		}
+	</style>
+</head>
+
+<body  class="bg-image p-5 text-center shadow-1-strong rounded mb-5 text-black"
+ 
+<!-- <body class=""><center>
+
+        <h2>Multi-Player Game</h2>
+ <strong><h1><a class="btn btn-secondary" href="Home.html" role="button">Home</a></h1></strong>
+ <h3>Click on the box to start the game.<h3>
+</body></centre>
+<body>
+	<div class="containerBox">
+		<div class="board">
+			<div class="square" id="0"></div>
+			<div class="square" id="1"></div>
+			<div class="square" id="2"></div>
+		</div>
+		<div class="board">
+			<div class="square" id="3"></div>
+			<div class="square" id="4"></div>
+			<div class="square" id="5"></div>
+		</div>
+		<div class="board">
+			<div class="square" id="6"></div>
+			<div class="square" id="7"></div>
+			<div class="square" id="8"></div>
+		</div>
+		<div class="player-turn">Player <span id="player">O</span>'s turn</div>
+		<div class="message" id="message"></div>
+	</div>
+	<script>
+		var sq0 = document.getElementById("0");
+		var sq1 = document.getElementById("1");
+		var sq2 = document.getElementById("2");
+		var sq3 = document.getElementById("3");
+		var sq4 = document.getElementById("4");
+		var sq5 = document.getElementById("5");
+		var sq6 = document.getElementById("6");
+		var sq7 = document.getElementById("7");
+		var sq8 = document.getElementById("8");
+		var player = document.getElementById("player");
+		var message = document.getElementById("message");
+		var turn = 0;
+		var state = ["", "", "", "", "", "", "", "", ""]
+
+		function check(){
+			var count = 0;
+			for(var i=0;i<9;++i){
+				if(state[i]=="")count++;
+			}
+			if(count==0)return "tie";
+			if(state[0]==state[1] && state[1]==state[2] && state[0]=='X')return 'X';
+			if(state[3]==state[4] && state[4]==state[5] && state[3]=='X')return 'X';
+			if(state[6]==state[7] && state[7]==state[8] && state[6]=='X')return 'X';
+			if(state[0]==state[3] && state[3]==state[6] && state[0]=='X')return 'X';
+			if(state[1]==state[4] && state[4]==state[7] && state[1]=='X')return 'X';
+			if(state[2]==state[5] && state[5]==state[8] && state[2]=='X')return 'X';
+			if(state[0]==state[4] && state[4]==state[8] && state[0]=='X')return 'X';
+			if(state[2]==state[4] && state[4]==state[6] && state[2]=='X')return 'X';
+
+			if(state[0]==state[1] && state[1]==state[2] && state[0]=='O')return 'O';
+			if(state[3]==state[4] && state[4]==state[5] && state[3]=='O')return 'O';
+			if(state[6]==state[7] && state[7]==state[8] && state[6]=='O')return 'O';
+			if(state[0]==state[3] && state[3]==state[6] && state[0]=='O')return 'O';
+			if(state[1]==state[4] && state[4]==state[7] && state[1]=='O')return 'O';
+			if(state[2]==state[5] && state[5]==state[8] && state[2]=='O')return 'O';
+			if(state[0]==state[4] && state[4]==state[8] && state[0]=='O')return 'O';
+			if(state[2]==state[4] && state[4]==state[6] && state[2]=='O')return 'O';
+
+			return false;
+
+		}
+
+		
+		document.body.addEventListener('click', function (e) {
+			if (turn) {
+				e.target.innerHTML = "X";
+				state[e.target.id] = "X";
+				turn = 0;
+				player.innerHTML = "O";
+			}
+			else {
+				e.target.innerHTML = "O";
+				state[e.target.id] = "O";
+				turn = 1;
+				player.innerHTML = "X";
+			}
+
+			if(check()){
+				if(check()!="tie"){
+					message.innerHTML = "Player " + check() + " has won!";
+				}
+				else{
+					message.innerHTML = "Its a tie!";
+				}
+
+				setTimeout(()=>{
+					window.location.reload();
+				},1500)
+			}
+			
+		})
+
+
+	</script>
+</body>
+
+</html>
